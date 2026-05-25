@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS CRUD Application</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>AWS CRUD Operation Project</h1>
+
+    <a href="/add">Add Employee</a>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee[0] }}</td>
+            <td>{{ employee[1] }}</td>
+            <td>{{ employee[2] }}</td>
+            <td>{{ employee[3] }}</td>
+            <td>
+                <a href="/edit/{{ employee[0] }}">Edit</a>
+                <a href="/delete/{{ employee[0] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
